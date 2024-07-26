@@ -1,8 +1,7 @@
 local packer = require("packer")
 packer.startup({
 	function(use)
-		use 'wbthomason/packer.nvim'
-	
+		use 'wbthomason/packer.nvim'	
 	------------------------------------ colorschemes ---------------------------------------------
 	-- tokyonight
 		use 'folke/tokyonight.nvim'
@@ -12,7 +11,7 @@ packer.startup({
 	-- bufferline
 		use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
 	-- window-picker
-		use 'gbrlsnchs/winpick.nvim' 
+		use 'gbrlsnchs/winpick.nvim'
 	-- lualine
 		use({"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}})
 		use 'arkav/lualine-lsp-progress'
@@ -38,9 +37,13 @@ packer.startup({
 		use "hrsh7th/cmp-cmdline"
 	-- nvim-comment
 		use "numToStr/Comment.nvim"
+	-- spectre
+	--	use "nvim-lua/plenary"
+	--  use "nvim-pack/spectre"
+	-- glow
+		use "ellisonleao/glow.nvim"
 	  end
 })
-	
 
 pcall(
 	vim.cmd,

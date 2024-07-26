@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["lualine-lsp-progress"] = {
     loaded = true,
     path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
