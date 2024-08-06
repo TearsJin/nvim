@@ -20,7 +20,13 @@ local opts = {
 				enable = false,
 			},
 		},
+		python = {
+			analysis = {
+				disabled = {"E501"},
+			}
+		},
 	},
+
 
 	flags = {
 		debounce_text_changes = 150,

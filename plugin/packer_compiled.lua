@@ -114,10 +114,20 @@ _G.packer_plugins = {
     path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["glow.nvim"] = {
     loaded = true,
     path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine-lsp-progress"] = {
     loaded = true,
@@ -193,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/Aelita/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["winpick.nvim"] = {
     loaded = true,

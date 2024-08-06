@@ -29,12 +29,16 @@ packer.startup({
 		use "neovim/nvim-lspconfig"
 	-- nvim-cmp
 		use "hrsh7th/nvim-cmp"
+		use "hrsh7th/vim-vsnip"
 	-- cmp sourece
 		use "hrsh7th/cmp-vsnip"
 		use "hrsh7th/cmp-nvim-lsp"
 		use "hrsh7th/cmp-buffer"
 		use "hrsh7th/cmp-path"
 		use "hrsh7th/cmp-cmdline"
+		use "rafamadriz/friendly-snippets"
+		use "onsails/lspkind-nvim"
+		-- use "honza/vim-snippets"
 	-- nvim-comment
 		use "numToStr/Comment.nvim"
 	-- spectre

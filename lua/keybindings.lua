@@ -1,10 +1,18 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local map = vim.api.nvim_set_keymap
+local function map(modes, lhs, rhs, opt)
+	if type(modes) == "string" then
+		vim.api.nvim_set_keymap(modes, lhs, rhs, opt)
+	else
+		for _, mode in ipairs(modes) do
+			vim.api.nvim_set_keymap(mode, lhs, rhs, opt)
+		end
+	end
+end
+
 
 local opt = {noremap = true, silent = true}
-
 
 map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
@@ -14,16 +22,25 @@ map("n", "<A-Right>", ":vsplit<CR>", opt)
 map("n", "<CR>", "i", opt)
 map("n", "<C-Down>", "yyp", opt)
 map("n", "<C-x>", "dd", opt)
+map("n", "<C-z>", "u", opt)
+map("n", "<leader><leader>", ":Zsh<CR>", opt)
+map("n", "<leader>r", ":Run<CR>", opt)
+map("n", "<leader>c", ":lua require('myplugin').clipPath()<CR>", opt)
 
--- plugins keybind
+
 map("i", "<A-Down>", "<C-o>:m +1<CR>", opt)
 map("i", "<A-Up>", "<C-o>:m .-2<CR>", opt)
-map("i", "<C-Down>", "<C-o>yy<C-o>p", opt)
-map("i", "<C-x>", "<C-o>dd", opt)
-map("i", "<C-c>", "<C-o>yy", opt)
-map("i", "<C-v>", "<C-o>p", opt)
+map("i", "<C-Down>", "<c-o>yy<c-o>p", opt)
+map("i", "<c-x>", "<c-o>dd", opt)
+map("i", "<c-c>", "<c-o>yy", opt)
+map("i", "<c-v>", "<c-o>p", opt)
 map("i", "<C-z>", "<C-o>:undo<CR>", opt)
-map("i", "<C-s>", "<Esc>:w<CR>", opt)
+map("i", "<C-s>", "<Esc>:w<CR>", opt) 
+
+map("v", "<C-c>", "y:lua require('myplugin').clip('\"')<CR>", opt)
+map("v", "<C-v>", "p", opt)
+-- map("v")
+-- plugins keybind
 
 local pluginKeys = {}
 
@@ -61,9 +78,11 @@ map("n", "<C-q>", ":lua vim.api.nvim_set_current_win(tonumber(tostring(require('
 
 -- telescope
 map("n", "f", ":Telescope find_files<CR>", opt)
+map("n", "<leader>f", ":Telescope live_grep<CR>", opt)
+
 
 -- Lsp
-pluginKeys.mapLSP = function(mapbuf)	
+pluginKeys.mapLSP = function(mapbuf)
 end
 
 -- nvim-cmp
@@ -71,10 +90,18 @@ pluginKeys.cmp = function(cmp)
 	return	{
 	 ["<C-Down>"] = cmp.mapping.select_next_item(),
 	 ["<C-Up>"] = cmp.mapping.select_prev_item(),
-	 -- ["<CR>"] = cmp.mapping.confirm({
-	--	select = true,
-	--	behavior = cmp.ConfirmBehavior.Replace
-	 --}),
+	 ["<CR>"] = cmp.mapping({
+       i = function(fallback)
+         if cmp.visible() and cmp.get_active_entry() then
+           cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+         else
+           fallback()
+         end
+       end,
+       s = cmp.mapping.confirm({ select = true }),
+       c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+     }),
+	--['<CR>'] = cmp.mapping.complete(),
    }
 end
 
@@ -92,6 +119,8 @@ pluginKeys.comment = {
 	}
 }
 
+-- lsp
+map('n', '<Leader>d', '<cmd>lua vim.diagnostic.virtual_text = (not vim.diagnostic.virtual_text)<CR>', { noremap = true, silent = true })
 
 
 return pluginKeys
