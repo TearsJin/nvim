@@ -1,7 +1,7 @@
 local packer = require("packer")
 packer.startup({
 	function(use)
-		use 'wbthomason/packer.nvim'	
+		use 'wbthomason/packer.nvim'
 	------------------------------------ colorschemes ---------------------------------------------
 	-- tokyonight
 		use 'folke/tokyonight.nvim'
@@ -19,7 +19,8 @@ packer.startup({
 		use({"nvim-telescope/telescope.nvim",requires = {"nvim-lua/plenary.nvim","nvim-treesitter/nvim-treesitter"}})
 	-- dashboard
 		use {"glepnir/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons"}
-	-- project
+		-- use "mhinz/vim-startify"
+		-- project
 		use "ahmedkhalf/project.nvim"
 	-- treesitter
 		use {"nvim-treesitter/nvim-treesitter", run = ": TSUpdate"}
@@ -46,7 +47,10 @@ packer.startup({
 	--  use "nvim-pack/spectre"
 	-- glow
 		use "ellisonleao/glow.nvim"
-	  end
+	-- indent-blcnkline
+		use "lukas-reineke/indent-blankline.nvim"
+
+	end
 })
 
 pcall(

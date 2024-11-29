@@ -16,7 +16,7 @@ local function my_on_patch(bufnr)
 
 	vim.keymap.set('n', 'v', api.node.open.vertical, opts("vsplit"))
 	vim.keymap.set('n', '>', api.node.navigate.sibling.next, opts("Next Sibling"))
-
+--	vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts("UP"))
 
 end
 
@@ -38,7 +38,7 @@ nvim_tree.setup({
 
 	-- hidden
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 		custom = { 'node_modules' },
 	},
 	view = {

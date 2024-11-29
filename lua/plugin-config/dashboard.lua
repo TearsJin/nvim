@@ -42,9 +42,10 @@ dashboard.setup({
 	  '                                                                                  ',
 	  '                                                                                  ',},
 		center = {
+		  { desc = "Start with file", action = "Telescope find_files cwd=~"},
 		  { desc = "Projects", action = "Telescope projects",},
 		  { desc = "Recently files", action = "Telescope oldfiles",},
-		},
+	  },
 		packages = { enable = true },
 		footer = {},
 	},

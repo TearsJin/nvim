@@ -12,7 +12,7 @@ vim.wo.cursorline = true
 
 vim.wo.signcolumn = "yes"
 
-vim.wo.colorcolumn = "120"
+-- vim.wo.colorcolumn = "120"
 
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
@@ -55,7 +55,7 @@ vim.o.swapfile = false
 
 vim.o.updatetime = 300
 
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 1000
 
 vim.o.splitbelow = true
 vim.o.splitright = true

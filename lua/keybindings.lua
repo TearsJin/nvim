@@ -13,33 +13,19 @@ end
 
 
 local opt = {noremap = true, silent = true}
-
-map("n", "q", ":q<CR>", opt)
-map("n", "qq", ":q!<CR>", opt)
-map("n", "Q", ":qa!<CR>", opt)
-map("n", "<C-s>", ":w<CR>", opt)
-map("n", "<A-Right>", ":vsplit<CR>", opt)
-map("n", "<CR>", "i", opt)
-map("n", "<C-Down>", "yyp", opt)
-map("n", "<C-x>", "dd", opt)
-map("n", "<C-z>", "u", opt)
-map("n", "<leader><leader>", ":Zsh<CR>", opt)
-map("n", "<leader>r", ":Run<CR>", opt)
-map("n", "<leader>c", ":lua require('myplugin').clipPath()<CR>", opt)
-
-
-map("i", "<A-Down>", "<C-o>:m +1<CR>", opt)
+map("n", "q", ":q<CR>", opt)												-- quit
+map("n", "qq", ":q!<CR>", opt)												-- quit
+map("n", "Q", ":qa!<CR>", opt)												-- quit
+map("n", "<C-s>", ":w<CR>", opt)											-- save
+map("n", "<A-Right>", ":vsplit<CR>", opt)									-- split
+map("n", "<CR>", "i", opt)													-- enter
+map("n", "<leader><leader>", ":Zsh<CR>", opt)								-- open the shell
+map("n", "<A-Down>", ":m +1<CR>", opt)
+map("n", "<A-Up>", ":m .-2<CR>", opt)
+map("i", "<C-s>", "<Esc>:w<CR>", opt)
 map("i", "<A-Up>", "<C-o>:m .-2<CR>", opt)
-map("i", "<C-Down>", "<c-o>yy<c-o>p", opt)
-map("i", "<c-x>", "<c-o>dd", opt)
-map("i", "<c-c>", "<c-o>yy", opt)
-map("i", "<c-v>", "<c-o>p", opt)
-map("i", "<C-z>", "<C-o>:undo<CR>", opt)
-map("i", "<C-s>", "<Esc>:w<CR>", opt) 
-
-map("v", "<C-c>", "y:lua require('myplugin').clip('\"')<CR>", opt)
-map("v", "<C-v>", "p", opt)
--- map("v")
+map("i", "<A-Down>", "<C-o>:m +1<CR>", opt)
+map("t", "<Esc>","<C-\\><C-n>",opt)
 -- plugins keybind
 
 local pluginKeys = {}
@@ -55,10 +41,10 @@ pluginKeys.nvimTreeList = {
 	{ Key = ".", action = "toggle_dotfiles" },
 	{ Key = "<F5>", action = "refresh" },
 	{ Key = "a", action = "create" },
-	{ Key = "d", action = "remove" },
+	{ Key = "x", action = "remove" },
 	{ Key = "r", action = "rename" },
-	{ Key = "x", action = "cut" },
-	{ Key = "c", action = "copy" },
+	{ Key = "d", action = "cut" },
+	{ Key = "y", action = "copy" },
 	{ Key = "p", action = "paste" },
 	{ Key = "s", action = "system_open" },
 }
@@ -66,11 +52,6 @@ pluginKeys.nvimTreeList = {
 -- bufferline
 map("n", "<Tab>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
-
-
 
 -- pickwin
 --
@@ -108,8 +89,8 @@ end
 -- comment
 pluginKeys.comment = {
 	-- Normal
-	toggle = {
-		line = "gcc",
+	toggler = {
+		line = "gdc",
 		block = "gbc"
 	},
 	-- Visual

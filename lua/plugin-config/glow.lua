@@ -7,12 +7,12 @@ end
 
 
 glow.setup({
-	-- glow_path = "/bin",
-	-- install_path = "~/.local/bin",
+	-- glow_path = "",
+	-- install_path = "",
 	border = "single",
-	style = "dark",
+	style = "light",
 	pager = false,
-	width = 80,
+	width = 120,
 	height = 100,
 	width_ratio = 0.7,
 	height_ratio = 0.7,

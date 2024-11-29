@@ -13,6 +13,7 @@ require("plugin-config.project")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.comment")
 require("plugin-config.glow")
+require("plugin-config.ibl")
 require("lsp.setup")
 require("lsp.cmp")
 
