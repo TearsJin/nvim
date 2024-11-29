@@ -49,7 +49,10 @@ packer.startup({
 		use "ellisonleao/glow.nvim"
 	-- indent-blcnkline
 		use "lukas-reineke/indent-blankline.nvim"
-
+	-- latex
+		use "lervag/vimtex"
+	-- notify
+		use 'rcarriga/nvim-notify'
 	end
 })
 

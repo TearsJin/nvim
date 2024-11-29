@@ -8,11 +8,10 @@ end
 
 glow.setup({
 	-- glow_path = "",
-	-- install_path = "",
+	-- install_path = "~/.local/bin",
 	border = "single",
-	style = "light",
 	pager = false,
-	width = 120,
+	width = 150,
 	height = 100,
 	width_ratio = 0.7,
 	height_ratio = 0.7,

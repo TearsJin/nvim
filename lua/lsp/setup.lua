@@ -28,16 +28,18 @@ mason.setup({
 
 mason_config.setup({
 	ensure_installed = {
-	  "lua_ls",
-	  "pylsp",
-	},
+		"lua_ls",
+		"pylsp",
+		"texlab"
+  },
 })
 
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
 	lua_ls = require("lsp.config.lua"),
-	pylsp = require("lsp.config.lua")
-  }
+	pylsp = require("lsp.config.lua"),
+	texlab = require("lsp.config.lua")
+}
 
 
 for name, config in pairs (servers) do

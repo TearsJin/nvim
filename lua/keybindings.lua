@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 local function map(modes, lhs, rhs, opt)
 	if type(modes) == "string" then
@@ -100,8 +100,13 @@ pluginKeys.comment = {
 	}
 }
 
+-- vimtex
+map('n','<Leader>ll',':VimtexView<CR>', opt)
+
 -- lsp
 map('n', '<Leader>d', '<cmd>lua vim.diagnostic.virtual_text = (not vim.diagnostic.virtual_text)<CR>', { noremap = true, silent = true })
 
+-- glow
+map('n','<Leader>g', ':Glow<CR>', opt)
 
 return pluginKeys
